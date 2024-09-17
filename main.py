@@ -7,6 +7,10 @@ from io import BytesIO
 from sklearn.decomposition import TruncatedSVD
 
 
+st.title('Приложение для сжимания изображения')
+st.write('Приложение позволяет загрузить картинку по ссылке из интернета и сжать её при помощи svd разложения. Для большей наглядности изображение отображается в чёрно-белом цвете')
+
+
 def svd_transform(image, k):
     U, sing_values, V = np.linalg.svd(image)
     sigma = np.zeros(shape=image.shape)
